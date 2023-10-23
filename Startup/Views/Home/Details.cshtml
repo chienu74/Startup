@@ -1,7 +1,6 @@
 ﻿
 @model startup.Models.Post
 
-
 <!-- Blog Start -->
 <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
     <div class="container py-5">
@@ -9,7 +8,7 @@
             <div class="col-lg-8">
                 <!-- Blog Detail Start -->
                 <div class="mb-5">
-                    <img class="img-fluid w-100 rounded mb-5" src="img/blog-1.jpg" alt="">
+                    <img class="img-fluid w-100 rounded mb-5" src="@Model.Images" alt="">
                     <h1 class="mb-4">@Html.DisplayFor(model => model.Title)</h1>
                     <p>
                         @Html.Raw(Model.Contents)
