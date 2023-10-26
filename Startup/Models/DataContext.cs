@@ -14,5 +14,6 @@ namespace startup.Models
         public DbSet<Post> Posts { get; set; }
         public DbSet<view_Post_Menu> PostMenus { get; set; }
         public DbSet<AdminMenu> AdminMenus { get; set; }
+        public DbSet<AdminUser> AdminUsers { get; set; }
     }
 }
