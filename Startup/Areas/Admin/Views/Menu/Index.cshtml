@@ -33,12 +33,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach(var item in Model)
+                                @foreach (var item in Model)
                                 {
                                     <tr>
                                         <th class="text-center" scope="row">@item.MenuID</th>
-                                        <td><a asp-area="Admin" asp-controller="Menu" asp-action="Details"
-                                            asp-route-id="@item.MenuID" class="text-primary">@item.MenuName</a>
+                                        <td>
+                                            <a asp-area="Admin" asp-controller="Menu" asp-action="Details"
+                                               asp-route-id="@item.MenuID" class="text-primary">@item.MenuName</a>
                                         </td>
                                         <td class="text-center">@item.Levels</td>
                                         <td class="text-center">@item.ParentId</td>
@@ -46,11 +47,11 @@
                                         <td class="text-center">@item.IsActive</td>
                                         <td class="text-center">
                                             <a asp-area="Admin" asp-controller="Menu" asp-action="Edit"
-                                                        asp-route-id="@item.MenuID" class="btn btn-primary btn-sm"
-                                            title="Sửa nội dung bài viết"><i class="bi bi-pencil"></i></a>
+                                               asp-route-id="@item.MenuID" class="btn btn-primary btn-sm"
+                                               title="Sửa nội dung bài viết"><i class="bi bi-pencil"></i></a>
                                             <a asp-area="Admin" asp-controller="Menu" asp-action="Delete"
-                                                        asp-route-id="@item.MenuID" class="btn btn-danger btn-sm"
-                                            title="Xóa thông tin bài viết"><i class="bi bi-trash"></i></a>
+                                               asp-route-id="@item.MenuID" class="btn btn-danger btn-sm"
+                                               title="Xóa thông tin bài viết"><i class="bi bi-trash"></i></a>
                                         </td>
                                     </tr>
                                 }

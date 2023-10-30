@@ -48,7 +48,7 @@ namespace startup.Areas.Admin.Controllers
             return RedirectToAction("Create");
         }
 
-        public IActionResult Edit(int? id)
+        public IActionResult Edit(long? id)
         {
             if (id == null || id == 0)
             {
@@ -59,6 +59,7 @@ namespace startup.Areas.Admin.Controllers
             {
                 return NotFound();
             }
+
             var polist = (from m in _context.Posts
                           select new SelectListItem()
                           {

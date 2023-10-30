@@ -14,7 +14,7 @@ namespace startup.Areas.Admin.Controllers
         }
         public IActionResult Index()
         {
-            var mnList = _context.Menus.OrderBy(m=>m.MenuID).ToList();
+            var mnList = _context.Menus.OrderBy(m => m.MenuID).ToList();
             return View(mnList);
         }
         public IActionResult Create()
@@ -48,7 +48,7 @@ namespace startup.Areas.Admin.Controllers
 
         public IActionResult Edit(int? id)
         {
-            if(id == null || id == 0)
+            if (id == null || id == 0)
             {
                 return NotFound();
             }
@@ -60,7 +60,7 @@ namespace startup.Areas.Admin.Controllers
             var mnlist = (from m in _context.Menus
                           select new SelectListItem()
                           {
-                              Text=m.MenuName,
+                              Text = m.MenuName,
                               Value = m.MenuID.ToString(),
                           }).ToList();
             mnlist.Insert(0, new SelectListItem()

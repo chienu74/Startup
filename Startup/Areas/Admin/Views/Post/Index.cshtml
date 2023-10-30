@@ -8,12 +8,6 @@
     <div class="pagetitle">
         <h2>Danh sách Post</h2>
     </div>
-</main>
-
-<main id="main" class="main">
-    <div class="pagetitle">
-        <h2>Danh sách blog</h2>
-    </div>
 
     <p>
         <a type="buton" class="btn btn-success" asp-area="Post" asp-controller="Post" asp-action="Create">
@@ -21,6 +15,7 @@
             Thêm menu
         </a>
     </p>
+
     <section class="section dashboard">
         <div class="row">
             <div class="col-12">
@@ -45,9 +40,10 @@
                                         </td>
                                         <td class="text-center">@item.IsActive</td>
                                         <td class="text-center">
-                                            <a asp-area="Admin" asp-controller="Menu" asp-action="Edit"
+                                            <a asp-area="Admin" asp-controller="Post" asp-action="Edit"
                                                asp-route-id="@item.PostID" class="btn btn-primary btn-sm"
                                                title="Sửa nội dung bài viết"><i class="bi bi-pencil"></i></a>
+
                                             <a asp-area="Admin" asp-controller="Post" asp-action="Delete"
                                                asp-route-id="@item.PostID" class="btn btn-danger btn-sm"
                                                title="Xóa thông tin bài viết"><i class="bi bi-trash"></i></a>
