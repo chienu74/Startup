@@ -15,7 +15,10 @@
             <h2>Sửa post</h2>
         </div>
         <form asp-action="Edit" method="post">
+            <div asp-validation-summary="All"></div>
+
             <div class="form-row">
+                <input type="text" class="form-control mb-3" asp-for="PostID" type="hidden">
 
                 <div class="form-group col-md-12">
                     <label asp-for="Title">Title</label>
@@ -28,7 +31,7 @@
                 </div>
 
                 <div class="form-group col-md-12">
-                    <label class="control-label">Images</label>
+                    <label class="control-label">Images</label> 
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <button class="btn btn-success" type="button" onclick="openDialog()">Choose a pic</button>
@@ -54,10 +57,13 @@
                 </div>
 
                 <div class="form-group d-none">
-                    <input asp-for="MenuID" class="form-control" value="@Model.MenuID"> @*menuid là khóa ngoại nên *@
+                    <input asp-for="MenuID" class="form-control" value="@Model.MenuID">
                 </div>
+               
 
             </div>
+   
+
 
             <a class="btn btn-lg btn-warning p-2 mr-5" href="javascript:history.back()">
                 <i class="bi bi-arrow-left-circle"></i>Quay lại

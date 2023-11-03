@@ -31,10 +31,12 @@
                 <div class="form-group col-md-6">
                     <div class="alert-danger" asp-validation-summary="ModelOnly"></div>
                     <label asp-for="ParentId">ParentId </label>
-                    <select asp-for="ParentId"
-                             class="form-control"
-                             asp-items="@(new SelectList(ViewBag.mnList,"Value","Text"))">
-                    </select>
+                    @{
+                        var mnList = ViewBag.mnList ?? new List<SelectListItem>();
+                    }
+
+                    <select asp-for="ParentId" class="form-control" 
+                    asp-items="@(new SelectList(mnList, "Value", "Text"))"></select>
                 </div>
                 <div class="form-group col-md-6">
                     <label asp-for="Link">Link</label>

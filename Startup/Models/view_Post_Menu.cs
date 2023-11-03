@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace startup.Models
 {
     [Table("view_Post_Menu")]
-    public class view_Post_Menu
+    public class View_Post_Menu
     {
         [Key]
         public long PostID { get; set; }
