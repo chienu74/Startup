@@ -1,5 +1,8 @@
 ﻿
 @model startup.Models.Post
+@{
+    List<PostComment> postComments = ViewBag.postComments;
+}
 
 <!-- Blog Start -->
 <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
@@ -21,18 +24,22 @@
                     <div class="section-title section-title-sm position-relative pb-3 mb-4">
                         <h3 class="mb-0">3 Comments</h3>
                     </div>
-                    <div class="d-flex mb-4">
-                        <img src="img/user.jpg" class="img-fluid rounded" style="width: 45px; height: 45px;">
-                        <div class="ps-3">
-                            <h6><a href="">John Doe</a> <small><i>01 Jan 2045</i></small></h6>
-                            <p>
-                                Diam amet duo labore stet elitr invidunt ea clita ipsum voluptua, tempor labore
-                                accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed eirmod
-                            </p>
-                            <button class="btn btn-sm btn-light">Reply</button>
+
+                    @foreach(var item in postComments)
+                    {
+                        <div class="d-flex mb-4">
+                            <img src="img/user.jpg" class="img-fluid rounded" style="width: 45px; height: 45px;">
+                            <div class="ps-3">
+                                <h6><a href="">@item.Name</a> <small><i>01 Jan 2045</i></small></h6>
+                                <p>
+                                    @item.Detail
+                                </p>
+                                <button class="btn btn-sm btn-light">Reply</button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="d-flex mb-4">
+                    }
+
+                    @* <div class="d-flex mb-4">
                         <img src="img/user.jpg" class="img-fluid rounded" style="width: 45px; height: 45px;">
                         <div class="ps-3">
                             <h6><a href="">John Doe</a> <small><i>01 Jan 2045</i></small></h6>
@@ -53,7 +60,7 @@
                             </p>
                             <button class="btn btn-sm btn-light">Reply</button>
                         </div>
-                    </div>
+                    </div> *@
                 </div>
                 <!-- Comment List End -->
                 <!-- Comment Form Start -->

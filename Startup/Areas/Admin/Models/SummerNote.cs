@@ -1,6 +1,4 @@
-﻿
-
-namespace startup.Areas.Admin.Models
+﻿namespace startup.Areas.Admin.Models
 {
     public class SummerNote
     {

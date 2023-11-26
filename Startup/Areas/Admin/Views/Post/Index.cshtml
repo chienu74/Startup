@@ -30,10 +30,14 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @{int i=1; }
                                 @foreach (var item in Model)
                                 {
+
                                     <tr>
-                                        <th class="text-center" scope="row">@item.PostID</th>
+                                        @* <th class="text-center" scope="row">@item.PostID</th> *@
+                                        <th class="text-center" scope="row">@(i++)</th>
+
                                         <td>
                                             <a asp-area="Admin" asp-controller="Post" asp-action="Details"
                                                asp-route-id="@item.PostID" class="text-primary">@item.Title</a>

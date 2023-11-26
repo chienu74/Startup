@@ -38,6 +38,7 @@ namespace startup.Controllers
             {
                 return NotFound();
             }
+            ViewBag.PostComment = _context.postComments.Where(n=>n.PostId==id).ToList();
             return View(post);
         }
 
